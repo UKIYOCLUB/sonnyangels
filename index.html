@@ -4,42 +4,72 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UKIYO CLUB</title>
-  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
   <style>
     body {
-      background-color: black;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
       margin: 0;
+      padding: 0;
       color: white;
       text-align: center;
       font-family: 'Playfair Display', serif;
+      background-image: url("Snapshot_2.PNG");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    @keyframes fadeInZoom {
+      0% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
     .logo-container {
-      margin-top: 40px;
-      margin-bottom: 30px;
+      margin-top: 20px;
+      animation: fadeInZoom 1.5s ease-in-out;
     }
 
     .logo-image {
-      max-width: 400px;
-      width: 90%;
+      max-width: 250px;
+      width: 80%;
       height: auto;
+    }
+
+    .video {
+      max-width: 700px;
+      margin: 40px auto 20px;
+      padding: 15px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.15);
+      background-color: rgba(0, 0, 0, 0.4);
+      animation: fadeInZoom 1.2s ease 0.5s both;
+    }
+
+    iframe {
+      width: 100%;
+      height: 360px;
+      border-radius: 12px;
+      border: none;
     }
 
     .slogan {
       font-family: 'UnifrakturCook', cursive;
-      font-size: 2em;
-      letter-spacing: 2px;
-      margin-top: 10px;
-      margin-bottom: 40px;
+      font-size: 3em;
+      color: white;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+      margin: 0 auto 40px;
     }
 
     .buttons {
-      margin: 20px auto;
+      margin: 20px auto 60px;
       display: flex;
       justify-content: center;
       gap: 20px;
@@ -47,13 +77,15 @@
     }
 
     .buttons a {
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0.08);
       color: white;
       text-decoration: none;
-      padding: 10px 20px;
+      padding: 12px 24px;
       border: 1px solid white;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      font-size: 1em;
+      font-weight: 600;
     }
 
     .buttons a:hover {
@@ -61,27 +93,44 @@
       color: black;
     }
 
-    .video-title {
-      font-size: 1.3em;
-      margin-top: 50px;
-      margin-bottom: 10px;
-      font-weight: bold;
+    @media (max-width: 768px) {
+      .slogan {
+        font-size: 2.3em;
+      }
+
+      iframe {
+        height: 240px;
+      }
     }
 
-    iframe {
-      border-radius: 10px;
-      max-width: 90%;
+    @media (max-width: 480px) {
+      .slogan {
+        font-size: 1.8em;
+      }
+
+      iframe {
+        height: 200px;
+      }
     }
   </style>
 </head>
 <body>
   <main>
-    <!-- Logo con imagen nueva (texto incluido en imagen) -->
+    <!-- Logo -->
     <div class="logo-container">
-      <img src="ukiyo_club_logo.png" alt="UKIYO CLUB Logo Completo" class="logo-image" />
+      <img src="ukiyo_club_logo.png" alt="UKIYO CLUB Logo" class="logo-image" />
     </div>
 
-    <!-- F.F.F en estilo gótico -->
+    <!-- Video reproductor arriba del título -->
+    <div class="video">
+      <iframe
+        src="https://www.youtube.com/embed/uVazAt_JD1I?autoplay=1&mute=1"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- F.F.F título -->
     <p class="slogan">F.F.F</p>
 
     <!-- Botones -->
@@ -89,19 +138,6 @@
       <a href="https://open.spotify.com/intl-es/artist/2WXKwPIIvejiJ521Mp4HHb?si=dpMzD6S3RKO8ktEaKv5eFQ" target="_blank">Spotify</a>
       <a href="https://instagram.com/mortalshins/" target="_blank">Instagram</a>
       <a href="https://youtube.com/channel/UC8TZr3aykT6WqdNTqt65lWg" target="_blank">YouTube</a>
-    </div>
-
-    <!-- Título encima del vídeo -->
-    <p class="video-title">Shin - Sonny Angels</p>
-
-    <!-- Video -->
-    <div class="video">
-      <iframe width="100%" height="315"
-        src="https://www.youtube.com/embed/uVazAt_JD1I?autoplay=1&mute=1"
-        frameborder="0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen>
-      </iframe>
     </div>
   </main>
 </body>
